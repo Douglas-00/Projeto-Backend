@@ -2,7 +2,7 @@ const Knex = require("../config/db");
 
 exports.up = function(knex,Promise) {
   return Knex.schema.createTable('users',table =>{
-      table.increment('id').primary()
+      table.increments('id').primary()
       table.string('name').notNull()
       table.string('email').notNull().unique()
       table.string('password').notNull()
